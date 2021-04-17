@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
+
 import Frase from './Components/Frase';
-import Titulo from './Components/Titulo';
 import styled from '@emotion/styled';
 
 const Contenedor = styled.div`
@@ -40,6 +40,7 @@ function App() {
       'https://breaking-bad-quotes.herokuapp.com/v1/quotes'
     );
     const frase = await api.json();
+
     guardarFrase(frase[0]);
   };
 
@@ -50,7 +51,6 @@ function App() {
 
   return (
     <Contenedor>
-      <Titulo />
       <Frase frase={frase} />
       <Boton onClick={consultarAPI}>Obtener Frase</Boton>
     </Contenedor>
